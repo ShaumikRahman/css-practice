@@ -16,6 +16,23 @@ header {
     font-size: 1.5rem;
 }
 
+.overlay {
+    transition: all 250ms linear;
+    position: absolute;
+    top: 5.125rem;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-image: linear-gradient(#414141, transparent);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.overlay-open {
+    opacity: 1;
+    visibility: visible;
+}
+
 header a, a:visited, a:active {
     text-decoration: none;
     color: #616161;
@@ -37,6 +54,35 @@ header a:hover {
     margin: .5rem;
 }
 
+.header-menu {
+    display: block;
+    margin-top: 1.875rem;
+    width: calc(100% - 10rem);
+    border-radius: 0.625rem;
+    background-color: #f4f4f4;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    visibility: hidden;
+}
+
+.header-menu a {
+    text-align: center;
+    display: inherit;
+    padding: 0.75rem 1.25rem;
+}
+
+span {
+    display: block;
+    width: 2rem;
+    height: .25rem;
+    background-color: #272727;
+}
+
+span:not(:last-child) {
+    margin-bottom: .25rem;
+}
+
 h1 {
     display: inline;
 }
@@ -48,7 +94,8 @@ nav {
 }
 
 button {
-    transition: all 250ms ease-in-out;
+    text-align: center;
+    transition: all 100ms ease-in-out;
     padding: 1rem 1.875rem;
     border-radius: 2rem;
     border: 1px solid #000000;
@@ -60,6 +107,35 @@ button {
 button:hover {
     color: #000000;
     background: transparent;
+    cursor: pointer;
+}
+
+.open {
+    visibility: visible;
+}
+
+section {
+    position: relative;
+}
+
+.main-image {
+    position: inherit;
+    background-image: url('../img/index/main_actual.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+}
+
+.main-image::before {
+    content: '';
+    position: absolute;
+    background-image: url('../img/index/phone_with_bank.png');
+    background-size: 15rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
 }
 
 @media (max-width: 37.6875em) {
