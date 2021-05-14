@@ -10,10 +10,19 @@ body {
     color: #616161;
 }
 
+body section:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
 header {
     background-color: #c0c0c0;
     padding: 1rem;
     font-size: 1.5rem;
+    z-index: 10;
 }
 
 .overlay {
@@ -72,6 +81,12 @@ header a:hover {
     padding: 0.75rem 1.25rem;
 }
 
+.header-menu a:hover {
+    transition: all 100ms ease-in-out;
+    border-radius: 0.625rem;
+    background-color: #818181;
+}
+
 span {
     display: block;
     width: 2rem;
@@ -114,17 +129,32 @@ button:hover {
     visibility: visible;
 }
 
-section {
+.main {
+    z-index: -1;
     position: relative;
 }
 
+.main-text {
+    text-align: center;
+    margin: 1rem 0px;
+    order: 1;
+}
+
+.main-text p {
+    margin: 1rem 3rem;
+    line-height: 1.33rem;
+    font-size: 1.25rem;
+}
+
 .main-image {
-    position: inherit;
+    order: 2;
+    position: relative;
     background-image: url('../img/index/main_actual.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     min-height: 17.5rem;
+    width: 100%;
 }
 
 .main-image::before {
@@ -138,6 +168,18 @@ section {
     width: 100%;
 }
 
+.secondary {
+    text-align: center;
+    padding: 1rem 1rem;
+    border: 5px solid magenta;
+}
+
+.secondary p {
+    margin: 5rem 1rem;
+    border: 0.0625rem solid #cccccc;
+    box-shadow: 0.0625rem 0.0625rem 0.0625rem 0.0625rem #bebebe;
+}
+
 @media (max-width: 37.6875em) {
     .hide-for-mobile {
         display: none;
@@ -147,5 +189,9 @@ section {
 @media (min-width: 37.6875em) {
     .hide-for-desktop {
         display: none;
+    }
+
+    .enable-flex {
+        display: flex;
     }
 }
